@@ -4,7 +4,7 @@ public class Car extends Vehicle {
 
 	public Car() {		
 
-    	spotsNeeded = 1;
+    	spotsNeeded = 12;
     	
 		size = VehicleSize.Compact;
 	}
