@@ -1,22 +1,35 @@
 package com.parksystem.model;
 
+public class ParkingSpot
+{
 
-import com.parksystem.model.Vehicle;
-import com.parksystem.model.VehicleSize;
+	public ParkingSpot(VehicleSize size, Level level, int row, int number)
+	{
 
-public class ParkingSpot {
-	
-	private Vehicle vehicle;
-	private VehicleSize spotSize;
-	private int row;
-	private int spotNumber;
-	private Level level;
-	
-	public ParkingSpot(Level lvl, int r, int n, VehicleSize sz) {
-		level = lvl;
-		row = r;
-		spotNumber = n;
-		spotSize = sz;
 	}
 
+	public VehicleSize getSize()
+	{
+		return null;
+	}
+
+	public int getLevel()
+	{
+		return 0;
+	}
+
+	public int getRow()
+	{
+		return 0;
+	}
+
+	public int getNumber()
+	{
+		return 0;
+	}
+
+	public boolean canFitToVehicle(Vehicle vehicle)
+	{
+		return false;
+	}
 }

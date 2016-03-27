@@ -2,7 +2,7 @@ package com.parksystem.model;
 
 public class Car extends Vehicle {
 
-	public Car() {		
+	public Car(String vehicleLicense, String ownerLicense) {		
 
     	spotsNeeded = 1;
     	
