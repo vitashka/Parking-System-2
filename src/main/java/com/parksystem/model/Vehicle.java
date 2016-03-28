@@ -1,7 +1,5 @@
 package com.parksystem.model;
 
-import java.util.ArrayList;
-
 public abstract class Vehicle {
 	protected String licensePlate;
 	protected int spotsNeeded;

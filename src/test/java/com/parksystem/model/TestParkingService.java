@@ -29,6 +29,14 @@ public class TestParkingService
 	}
 	
 	@Test
+	public void testObjectTicket()
+	{
+		ParkingService ps = new ParkingService(new Parking());
+		
+		assertTrue(ps instanceof ParkingService);
+	}
+	
+	@Test
 	public void parkTest()
 	{
 		assertTrue(service.park(car));
