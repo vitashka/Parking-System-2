@@ -1,4 +1,4 @@
-//import java.util.*;
+package com.parksystem.model;
 
 abstract public class Vehicle {
 	protected VehicleSize size;

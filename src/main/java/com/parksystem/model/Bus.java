@@ -1,4 +1,8 @@
 
+package com.parksystem.model;
+
+
+
 public class Bus extends Vehicle {
 
 	public Bus(String vehicleLicense, String ownerLicense) {
@@ -17,4 +21,11 @@ public class Bus extends Vehicle {
 		return a;
 	}
 
+		
 }
+
+
+
+
+
+
