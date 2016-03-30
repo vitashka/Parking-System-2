@@ -20,7 +20,7 @@ public class TestCar {
 
 		ParkingSpot sp1 = new ParkingSpot(VehicleSize.Motorcycle, null, 0, 0);
 		assertFalse("spot size = motorcycle", car.canFitInSpot(sp1));
-		ParkingSpot sp2 = new ParkingSpot(VehicleSize.Car, null, 0, 0);
+		ParkingSpot sp2 = new ParkingSpot(VehicleSize.Сar, null, 0, 0);
 		assertTrue("spot size = car", car.canFitInSpot(sp2));
 		ParkingSpot sp3 = new ParkingSpot(VehicleSize.Bus, null, 0, 0);
 		assertTrue("spot size = bus", car.canFitInSpot(sp3));

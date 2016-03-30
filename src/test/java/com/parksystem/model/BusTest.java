@@ -19,7 +19,7 @@ public class BusTest {
 	public void testCanFitInSpot() {
 		ParkingSpot sp1 = new ParkingSpot(VehicleSize.Motorcycle, null, 0, 0);
 		assertFalse("spot size = motorcycle", bus.canFitInSpot(sp1));
-		ParkingSpot sp2 = new ParkingSpot(VehicleSize.Car, null, 0, 0);
+		ParkingSpot sp2 = new ParkingSpot(VehicleSize.Сar, null, 0, 0);
 		assertFalse("spot size = car", bus.canFitInSpot(sp2));
 		ParkingSpot sp3 = new ParkingSpot(VehicleSize.Bus, null, 0, 0);
 		assertTrue("spot size = bus", bus.canFitInSpot(sp3));
