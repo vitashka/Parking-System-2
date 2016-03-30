@@ -7,26 +7,6 @@ public class Level {
 	private int number;
 	private List<ParkingSpot> spots = new ArrayList<ParkingSpot>();
 	
-	public Level(int number) {
-		this.number = number;
-	}
-	
-	public int getNumber() {
-		return number;
-	}
-	
-	public void addSpot(ParkingSpot spot) {
-		spots.add(spot);
-	}
-	
-	public void removeSpot(ParkingSpot spot) {
-		spots.remove(spot);
-	}
-
-	public List<ParkingSpot> getSpots() {
-		return  spots;
-	}
-	
 	@Override
 	public String toString() {
 		return "Level [number=" + number + ", spots=" + spots + "]";
@@ -58,5 +38,27 @@ public class Level {
 		} else if (!spots.equals(other.spots))
 			return false;
 		return true;
+	}
+
+	public Level(int number) {
+		this.number = number;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void addSpot(ParkingSpot spot) {
+		spots.add(spot);
+	}
+
+	public void removeSpot(ParkingSpot spot) {
+		spots.remove(spot);
+	}
+
+	public List<ParkingSpot> getSpots() {
+
+		return  spots;
+
 	}
 }

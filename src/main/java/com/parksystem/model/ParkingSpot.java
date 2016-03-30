@@ -2,7 +2,6 @@ package com.parksystem.model;
 
 public class ParkingSpot
 {
-
 	private VehicleSize spotSize;
 	private int row;
 	private int spotNumber;
@@ -38,7 +37,6 @@ public class ParkingSpot
 			return true;	
 		if (vehicle.getSize().equals(VehicleSize.Bus) && spotSize.equals(VehicleSize.Bus))
 			return true;
-		
 		return false;
 	}
 
