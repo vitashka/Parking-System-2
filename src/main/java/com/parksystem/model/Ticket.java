@@ -32,11 +32,21 @@ public class Ticket
 	{
 		return this.startTime;
 	}
+	
+	public Vehicle getVehicle()
+	{
+		return this.vehicle;
+	}
+	
+	public List<ParkingSpot> getSpots()
+	{
+		return this.spots;
+	}
 
 	@Override
 	public String toString()
 	{
-		return "Ticket\nstartTime=" + startTime + "\nvehicle=" + vehicle + "\nspots=" + spots;
+		return "Ticket\n" + startTime + "\n" + vehicle + "\n" + Arrays.toString(spots.toArray());
 	}
 
 	@Override

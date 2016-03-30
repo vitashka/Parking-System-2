@@ -23,8 +23,8 @@ public class TestParkingServiceMock
 		ticket1 = new Ticket(car, null);
 		ticket2 = new Ticket(motorcycle, null);
 		
-		when(service.park(car)).thenReturn(true);
-		when(service.park(motorcycle)).thenReturn(true);
+		when(service.park(car)).thenReturn(ticket1);
+		when(service.park(motorcycle)).thenReturn(ticket2);
 		when(service.getTickets()).thenReturn(Arrays.asList(ticket1, ticket2));
 	}
 	
@@ -39,8 +39,8 @@ public class TestParkingServiceMock
 	@Test
 	public void parkTest()
 	{
-		assertTrue(service.park(car));
-		assertTrue(service.park(motorcycle));
+		assertTrue(service.park(car).equals(ticket1));
+		assertTrue(service.park(motorcycle).equals(ticket2));
 	}
 	
 	@Test

@@ -20,7 +20,7 @@ public class TicketTest
 		
 		level = new Level(0);	
 		spot1 = new ParkingSpot(VehicleSize.Motorcycle, level, 0, 0);
-		spot2 = new ParkingSpot(VehicleSize.Compact, level, 0, 1);	
+		spot2 = new ParkingSpot(VehicleSize.Car, level, 0, 1);	
 		
 		List<ParkingSpot> spots1 = new ArrayList<ParkingSpot>();
 		spots1.add(spot1);

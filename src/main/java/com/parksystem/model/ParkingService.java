@@ -5,37 +5,41 @@ import java.util.*;
 public class ParkingService
 {
 	private Parking parking;
-	private List<Ticket> tickets;
+	private List<Ticket> tickets = new ArrayList<Ticket>();;
 
 	public ParkingService(Parking parking)
 	{
 		this.parking = parking;
 	}
 
-	public boolean park(Vehicle vehicle)
+	public Ticket park(Vehicle vehicle)
 	{
 		List<ParkingSpot> spots = getSpotsForVehicle(vehicle);
-
+		
 		if (spots == null)
-			return false;
+			return null;
 
-		enrollTicket(new Ticket(vehicle, spots));
-		return true;
+		Ticket ticket = new Ticket(vehicle, spots);
+		enrollTicket(ticket);
+		return ticket;
 	}
 
 	private List<ParkingSpot> getSpotsForVehicle(Vehicle vehicle)
 	{
 		List<ParkingSpot> spotsForVehicle = new ArrayList<ParkingSpot>(5);
-
+		
 		for (Level level : parking.getLevels())
 			for (ParkingSpot spot : level.getSpots())
 			{
-				if (spot.canFitToVehicle(vehicle) && vehicle.canFitInSpot(spot) && spotIsEmpty(spot)
-						&& spotsInSameRowAndLevel(spotsForVehicle, spot))
-					spotsForVehicle.add(spot);
-				else
-					spotsForVehicle.clear();
-
+				if (spot.canFitToVehicle(vehicle) && vehicle.canFitInSpot(spot) && spotIsEmpty(spot))
+					if (spotsInSameRowAndLevel(spotsForVehicle, spot))
+						spotsForVehicle.add(spot);
+					else
+					{
+						spotsForVehicle.clear();
+						spotsForVehicle.add(spot);
+					}
+				
 				if (spotsForVehicle.size() == vehicle.getSpotsNeeded())
 					return spotsForVehicle;
 			}
@@ -47,8 +51,8 @@ public class ParkingService
 	{
 		for (Ticket t : tickets)
 			if (t.contains(spot))
-				return true;
-		return false;
+				return false;
+		return true;
 	}
 
 	private boolean spotsInSameRowAndLevel(List<ParkingSpot> spotList, ParkingSpot newSpot)
