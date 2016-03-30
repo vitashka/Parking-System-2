@@ -35,7 +35,7 @@ public class ParkingSpot {
 	}
 	
 	public boolean canFitToVehicle(Vehicle vehicle){
-		if (vehicle.size.equals(spotSize)||(vehicle.size.equals(VehicleSize.Motorcycle))|| spotSize.equals(VehicleSize.Large)){
+		if (vehicle.size.equals(spotSize)||(vehicle.size.equals(VehicleSize.Motorcycle))|| spotSize.equals(VehicleSize.Bus)){
 			return true;
 		}
 		return false;

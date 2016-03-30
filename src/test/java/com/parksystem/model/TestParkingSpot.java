@@ -15,15 +15,15 @@ public class TestParkingSpot {
 		lev2 = new Level(1);
 		lev3 = new Level(2);
 		parkspot1 = new ParkingSpot(VehicleSize.Motorcycle,lev1, 0, 1);
-		parkspot2 = new ParkingSpot(VehicleSize.Compact,lev2, 0, 2);
-		parkspot3 = new ParkingSpot( VehicleSize.Large,lev3, 0, 3);
+		parkspot2 = new ParkingSpot(VehicleSize.Car,lev2, 0, 2);
+		parkspot3 = new ParkingSpot( VehicleSize.Bus,lev3, 0, 3);
 	}
 
 	@Test
 	public void getSizeTest() {
 		assertEquals(parkspot1.getSize(), VehicleSize.Motorcycle);
-		assertEquals(parkspot2.getSize(), VehicleSize.Compact);
-		assertEquals(parkspot3.getSize(), VehicleSize.Large);
+		assertEquals(parkspot2.getSize(), VehicleSize.Car);
+		assertEquals(parkspot3.getSize(), VehicleSize.Bus);
 
 	}
 
@@ -51,7 +51,7 @@ public class TestParkingSpot {
 	@Test
 	public void canFitToVehicleTest() {
 		assertEquals(parkspot1.getSize(), VehicleSize.Motorcycle );
-		assertEquals(parkspot2.getSize(), VehicleSize.Compact);
-		assertEquals(parkspot3.getSize(), VehicleSize.Large);
+		assertEquals(parkspot2.getSize(), VehicleSize.Car);
+		assertEquals(parkspot3.getSize(), VehicleSize.Bus);
 	}
 }
