@@ -11,7 +11,7 @@ public class ParkingSpot {
 	private int spotNumber;
 	private Level level;
 
-	public ParkingSpot(Level level, int row, int number, VehicleSize spotSize) {
+	public ParkingSpot(VehicleSize spotSize, Level level, int row, int number) {
 		this.level = level;
 		this.row = row;
 		spotNumber = number;
@@ -35,7 +35,7 @@ public class ParkingSpot {
 	}
 	
 	public boolean canFitToVehicle(Vehicle vehicle){
-		if (vehicle.size.equals(spotSize)){
+		if (vehicle.size.equals(spotSize)||(vehicle.size.equals(VehicleSize.Motorcycle))|| spotSize.equals(VehicleSize.Large)){
 			return true;
 		}
 		return false;

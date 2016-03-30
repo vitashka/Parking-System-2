@@ -35,7 +35,7 @@ public class Parking {
 		return true;
 	}
 
-	List<Level> level = new ArrayList<Level>();
+	private List<Level> level = new ArrayList<Level>();
 
 	public Parking() {
 

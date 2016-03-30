@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Level {
+
+	private int number;
+	private List<ParkingSpot> spots = new ArrayList<ParkingSpot>();
 	@Override
 	public String toString() {
 		return "Level [number=" + number + ", spots=" + spots + "]";
@@ -37,8 +40,6 @@ public class Level {
 		return true;
 	}
 
-	private int number;
-	List<ParkingSpot> spots = new ArrayList<ParkingSpot>();
 
 	public Level(int number) {
 		this.number = number;
@@ -61,4 +62,6 @@ public class Level {
 		return  spots;
 
 	}
+	
+	
 }
