@@ -1,13 +1,35 @@
 package com.parksystem.model;
 
-import java.util.*;
+import java.util.ArrayList; 
+import java.util.List;
 
 public class Level {
 	private int number;
-	List<ParkingSpot> spots = new ArrayList<ParkingSpot>();
+	private List<ParkingSpot> spots = new ArrayList<ParkingSpot>();
+	
+	public Level(int number) {
+		this.number = number;
+	}
+	
+	public int getNumber() {
+		return number;
+	}
+	
+	public void addSpot(ParkingSpot spot) {
+		spots.add(spot);
+	}
+	
+	public void removeSpot(ParkingSpot spot) {
+		spots.remove(spot);
+	}
+
+	public List<ParkingSpot> getSpots() {
+		return  spots;
+	}
+	
 	@Override
 	public String toString() {
-		return "Level [number=" + number + "]";
+		return "Level [number=" + number + ", spots=" + spots + "]";
 	}
 
 	@Override
@@ -36,27 +58,5 @@ public class Level {
 		} else if (!spots.equals(other.spots))
 			return false;
 		return true;
-	}
-	
-	public Level(int number) {
-		this.number = number;
-	}
-	
-	public int getNumber() {
-		return number;
-	}
-	
-	public void addSpot(ParkingSpot spot) {
-		spots.add(spot);
-	}
-	
-	public void removeSpot(ParkingSpot spot) {
-		spots.remove(spot);
-	}
-
-	public List<ParkingSpot> getSpots() {
-
-		return  spots;
-
 	}
 }
