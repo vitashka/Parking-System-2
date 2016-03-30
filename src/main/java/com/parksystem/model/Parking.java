@@ -1,13 +1,12 @@
 package com.parksystem.model;
 
-import java.util.*;
+import java.util.ArrayList;
 import java.util.List;
 
-public class Parking
-{
+public class Parking {
 	@Override
 	public String toString() {
-		return "Parking [level=" + level + "]";
+		return "Parking";
 	}
 
 	@Override
@@ -35,18 +34,13 @@ public class Parking
 		return true;
 	}
 
-	List<Level> level = new ArrayList<Level>();
-
-	public Parking() {
-
-	}
+	private List<Level> level = new ArrayList<Level>();
 
 	public void addLevel(Level lev) {
 		level.add(lev);
 	}
 
 	public List<Level> getLevels() {
-
 		return level;
 	}
 }

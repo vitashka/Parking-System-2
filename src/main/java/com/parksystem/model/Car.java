@@ -18,5 +18,5 @@ public class Car extends Vehicle {
 			a = true;
 		}
 		return a;
-	}	
+	}
 }

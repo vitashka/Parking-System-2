@@ -29,7 +29,6 @@ public abstract class Vehicle {
 	public String getVehicleLicense() {
 		return vehicleLicense;
 	}
-
 	public void setOwnerLicense(String newVar) {
 		ownerLicense = newVar;
 	}
@@ -84,3 +83,4 @@ public abstract class Vehicle {
 		return "Vehicle [" + size + ", " + vehicleLicense + ", " + ownerLicense + "]";
 	}
 }
+

@@ -1,5 +1,4 @@
 package com.parksystem.model;
-
 public class Motorcycle extends Vehicle {
 
 	public Motorcycle(String vehicleLicense, String ownerLicense) {

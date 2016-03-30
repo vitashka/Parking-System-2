@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class CarTest {
+public class TestCar {
 
 	Car car = new Car(null, null);
 

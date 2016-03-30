@@ -16,9 +16,11 @@ public class Testlevel {
 	@Before
 	public void setup() {
 		level = new Level(0);
+		
 		sp1 = new ParkingSpot(VehicleSize.Car, level, 0, 1);
 		sp2 = new ParkingSpot(VehicleSize.Car, level, 0, 2);
 		sp3 = new ParkingSpot(VehicleSize.Car, level, 0, 3);
+
 		level.addSpot(sp1);
 		level.addSpot(sp2);
 		level.addSpot(sp3);
@@ -57,9 +59,7 @@ public class Testlevel {
 	}
 
 	@Test
-	public void testgetSpots() {
-		
+	public void testgetSpots() {		
 		assertTrue(level.getSpots() instanceof List<?>);
-
 	}
 }
