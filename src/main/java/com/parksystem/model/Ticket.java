@@ -5,6 +5,7 @@ import java.util.*;
 public class Ticket
 {
 	private Date startTime;
+	private Date endTime;
 	private Vehicle vehicle;
 	private List<ParkingSpot> spots;
 
@@ -13,6 +14,11 @@ public class Ticket
 		this.startTime = new Date();
 		this.vehicle = vehicle;
 		this.spots = spots;
+	}
+	
+	public void stopTime()
+	{
+		this.endTime = new Date();
 	}
 
 	public boolean contains(Vehicle vehicle)
@@ -32,6 +38,11 @@ public class Ticket
 	{
 		return this.startTime;
 	}
+
+	public Date getEndTime()
+	{
+		return this.endTime;
+	}
 	
 	public Vehicle getVehicle()
 	{
@@ -46,7 +57,7 @@ public class Ticket
 	@Override
 	public String toString()
 	{
-		return "Ticket\n" + startTime + "\n" + vehicle + "\n" + Arrays.toString(spots.toArray());
+		return "Ticket\n" + startTime + "\n" + endTime + "\n" + vehicle + "\n" + Arrays.toString(spots.toArray());
 	}
 
 	@Override
@@ -54,6 +65,7 @@ public class Ticket
 	{
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((endTime == null) ? 0 : endTime.hashCode());
 		result = prime * result + ((spots == null) ? 0 : spots.hashCode());
 		result = prime * result + ((startTime == null) ? 0 : startTime.hashCode());
 		result = prime * result + ((vehicle == null) ? 0 : vehicle.hashCode());
@@ -70,11 +82,23 @@ public class Ticket
 		if (getClass() != obj.getClass())
 			return false;
 		Ticket other = (Ticket) obj;
+		if (endTime == null)
+		{
+			if (other.endTime != null)
+				return false;
+		} else if (!endTime.equals(other.endTime))
+			return false;
 		if (spots == null)
 		{
 			if (other.spots != null)
 				return false;
 		} else if (!spots.equals(other.spots))
+			return false;
+		if (startTime == null)
+		{
+			if (other.startTime != null)
+				return false;
+		} else if (!startTime.equals(other.startTime))
 			return false;
 		if (vehicle == null)
 		{

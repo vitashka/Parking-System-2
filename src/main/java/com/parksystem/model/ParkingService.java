@@ -71,12 +71,17 @@ public class ParkingService
 
 	public void remove(Vehicle vehicle)
 	{
-		for (Ticket t : tickets)
-			if (t.contains(vehicle))
+		for (Ticket ticket : tickets)
+			if (ticket.contains(vehicle))
 			{
-				discardTicket(t);
+				discardTicket(ticket);
 				return;
 			}
+	}
+	
+	public void remove(Ticket ticket)
+	{
+		discardTicket(ticket);
 	}
 
 	private void enrollTicket(Ticket ticket)
@@ -87,6 +92,7 @@ public class ParkingService
 	private void discardTicket(Ticket ticket)
 	{
 		this.tickets.remove(ticket);
+		ticket.stopTime();
 	}
 
 	public List<Ticket> getTickets()

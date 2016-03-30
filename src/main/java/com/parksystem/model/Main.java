@@ -38,10 +38,12 @@ public class Main
 
 		Bus bus1 = new Bus("bus1", "bus1");
 		Bus bus2 = new Bus("bus2", "bus2");
-		System.out.println("========\n" + service.park(bus1));
+		Ticket ticket1 = service.park(bus1);
+		System.out.println("========\n" + ticket1);
 		System.out.println("========\n" + service.park(bus2));
-		service.remove(bus1);
+		service.remove(ticket1);
 		System.out.println("========\n" + service.park(bus2));
+		System.out.println();
 
 		Car car1 = new Car("car1", "car1");
 		Car car2 = new Car("car2", "car2");
@@ -62,6 +64,7 @@ public class Main
 		System.out.println("========\n" + service.park(car8));
 		service.remove(car4);
 		System.out.println("========\n" + service.park(car8));
+		System.out.println();
 
 		Motorcycle mot1 = new Motorcycle("mot1", "mot1");
 		Motorcycle mot2 = new Motorcycle("mot2", "mot2");
@@ -76,12 +79,15 @@ public class Main
 		System.out.println("========\n" + service.park(mot2));
 		System.out.println("========\n" + service.park(mot3));
 		System.out.println("========\n" + service.park(mot4));
-		System.out.println("========\n" + service.park(mot5));
+		Ticket ticket2 = service.park(mot5);
+		System.out.println("========\n" + ticket2);
+		System.out.println("========\n" + service.park(mot6));
+		service.remove(ticket2);
 		System.out.println("========\n" + service.park(mot6));
 		System.out.println("========\n" + service.park(mot7));
-		System.out.println("========\n" + service.park(mot8));
-		service.remove(car6);
+		service.remove(car3);
 		System.out.println("========\n" + service.park(mot7));
+		System.out.println("========\n" + service.park(mot8));
 		service.remove(bus2);
 		System.out.println("========\n" + service.park(mot8));
 	}

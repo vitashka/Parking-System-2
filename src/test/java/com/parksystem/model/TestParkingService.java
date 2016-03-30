@@ -47,10 +47,14 @@ public class TestParkingService
 	{
 		Bus bus1 = new Bus("bus1", "bus1");
 		Bus bus2 = new Bus("bus2", "bus2");
-		assertTrue("parking bus1", service.park(bus1).contains(bus1));
+		
+		Ticket ticket1 = service.park(bus1);
+		assertTrue("parking bus1", ticket1.contains(bus1));	
 		assertTrue("parking bus2", service.park(bus2) == null);
-		service.remove(bus1);
+		
+		service.remove(ticket1);
 		assertTrue("parking bus2", service.park(bus2).contains(bus2));
+		
 		
 		Car car1 = new Car("car1", "car1");
 		Car car2 = new Car("car2", "car2");
@@ -85,12 +89,15 @@ public class TestParkingService
 		assertTrue("parking mot2", service.park(mot2).contains(mot2));
 		assertTrue("parking mot3", service.park(mot3).contains(mot3));
 		assertTrue("parking mot4", service.park(mot4).contains(mot4));
-		assertTrue("parking mot5", service.park(mot5).contains(mot5));
+		Ticket ticket2 = service.park(mot5);
+		assertTrue("parking mot5", ticket2.contains(mot5));
 		assertTrue("parking mot6", service.park(mot6) == null);
+		service.remove(ticket2);
+		assertTrue("parking mot6", service.park(mot6).contains(mot6));
 		assertTrue("parking mot7", service.park(mot7) == null);
-		assertTrue("parking mot8", service.park(mot8) == null);
-		service.remove(car6);
+		service.remove(car3);
 		assertTrue("parking mot7", service.park(mot7).contains(mot7));
+		assertTrue("parking mot8", service.park(mot8) == null);
 		service.remove(bus2);
 		assertTrue("parking mot8", service.park(mot8).contains(mot8));
 	}
