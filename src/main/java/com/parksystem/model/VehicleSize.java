@@ -1,11 +1,7 @@
 package com.parksystem.model;
 
 public enum VehicleSize {
-	Motorcycle, 
-
-	 
-
-	Сar, 
-
-	Bus,
+	Motorcycle,
+	Car,
+	Bus
 }

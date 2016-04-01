@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Parking {
-
 	@Override
 	public String toString() {
-		return "Parking [level=" + level + "]";
+		return "Parking";
 	}
 
 	@Override
@@ -37,18 +36,11 @@ public class Parking {
 
 	private List<Level> level = new ArrayList<Level>();
 
-	public Parking() {
-
-	}
-
 	public void addLevel(Level lev) {
 		level.add(lev);
 	}
 
 	public List<Level> getLevels() {
-
 		return level;
 	}
-
-
 }

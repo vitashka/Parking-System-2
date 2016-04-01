@@ -1,14 +1,11 @@
-
 package com.parksystem.model;
-
-
 
 public class Bus extends Vehicle {
 
 	public Bus(String vehicleLicense, String ownerLicense) {
 		this.vehicleLicense = vehicleLicense;
 		this.ownerLicense = ownerLicense;
-		spotsNeeded = 1;
+		spotsNeeded = 5;
 		size = VehicleSize.Bus;
 	}
 
@@ -19,13 +16,5 @@ public class Bus extends Vehicle {
 			a = true;
 		}
 		return a;
-	}
-
-		
+	}	
 }
-
-
-
-
-
-

@@ -6,7 +6,7 @@ public class Car extends Vehicle {
 		this.vehicleLicense = vehicleLicense;
 		this.ownerLicense = ownerLicense;
 		spotsNeeded = 1;
-		size = VehicleSize.Сar;
+		size = VehicleSize.Car;
 	}
 
 	public boolean canFitInSpot(ParkingSpot spot) {
@@ -14,10 +14,9 @@ public class Car extends Vehicle {
 		if (spot.getSize().equals(VehicleSize.Bus)) {
 			a = true;
 		}
-		if (spot.getSize().equals(VehicleSize.Сar)) {
+		if (spot.getSize().equals(VehicleSize.Car)) {
 			a = true;
 		}
 		return a;
 	}
-
 }

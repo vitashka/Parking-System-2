@@ -1,11 +1,7 @@
 package com.parksystem.model;
 
-import com.parksystem.model.Vehicle;
-import com.parksystem.model.VehicleSize;
-
-public class ParkingSpot {
-
-	// private Vehicle vehicle;
+public class ParkingSpot
+{
 	private VehicleSize spotSize;
 	private int row;
 	private int spotNumber;
@@ -14,7 +10,7 @@ public class ParkingSpot {
 	public ParkingSpot(VehicleSize spotSize, Level level, int row, int number) {
 		this.level = level;
 		this.row = row;
-		spotNumber = number;
+		this.spotNumber = number;
 		this.spotSize = spotSize ;
 	}
 
@@ -35,9 +31,12 @@ public class ParkingSpot {
 	}
 	
 	public boolean canFitToVehicle(Vehicle vehicle){
-		if (vehicle.size.equals(spotSize)||(vehicle.size.equals(VehicleSize.Motorcycle))|| spotSize.equals(VehicleSize.Bus)){
+		if (vehicle.getSize().equals(VehicleSize.Motorcycle))
 			return true;
-		}
+		if (vehicle.getSize().equals(VehicleSize.Car) && (spotSize.equals(VehicleSize.Car) || spotSize.equals(VehicleSize.Bus)))
+			return true;	
+		if (vehicle.getSize().equals(VehicleSize.Bus) && spotSize.equals(VehicleSize.Bus))
+			return true;
 		return false;
 	}
 
@@ -77,9 +76,6 @@ public class ParkingSpot {
 
 	@Override
 	public String toString() {
-		return "ParkingSpot [spotSize=" + spotSize + ", row=" + row + ", spotNumber=" + spotNumber + ", level=" + level
-				+ "]";
+		return "ParkingSpot [" + spotSize + ", " + level.getNumber() + ", " + row + ", " + spotNumber + "]";
 	}
-	
-	
 }
